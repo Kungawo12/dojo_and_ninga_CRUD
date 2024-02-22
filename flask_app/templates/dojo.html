@@ -6,7 +6,7 @@
             <form action="/dojos/add_dojo" method="post">
             <label for="name">Name:</label>
             <input type="text" class="text form-control m-1" name="name">
-            <button type="submit"class="btn btn-outline-primary m-3">Create</button>
+            <button type="submit"class="btn btn-outline-primary m-3">Add Dojo</button>
             </form>
         </div>
     
@@ -14,11 +14,13 @@
         <div class="card-title p-4">
             <h1>All Dojos</h1>
             {%for dojo in dojos%}
-                <p>{{dojo.name}}</p>
+                <p>
+                    <a href="/dojos/{{dojo.id}}" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{dojo.name}}</a>
+                </p>
             {%endfor%}
         </div>
     </div>
     
 </div>
-<p class="ms-5 ps-5"><a href="/dojos/add_ninja" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Add Ninja</a></p>
+<p class="ms-5 ps-5"><a href="/ninjas" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Add Ninja</a></p>
 {%endblock%}

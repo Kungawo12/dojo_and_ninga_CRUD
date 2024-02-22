@@ -1,0 +1,27 @@
+{%extends "layout.html"%}
+{%block body%}
+<div class="container bg-secondary col-6 mt-3">
+    <h1 class="m-4 pt-4">Edit Ninja {{ninja.id}}</h1>
+    <form action="/ninjas/update/{{ninja.id}}" method="post">
+        <input type="hidden" id="id" value="">
+        <div class="m-4 ">
+            <label for="first_name">First_name</label>
+            <input class="form-control"  type="text" name="first_name" id="first_name">
+        </div>
+        <div class="m-4 ">
+            <label for="last_name">Last_name</label>
+                <input class="form-control" type="text" name="last_name" id="first_name">
+        </div>
+        <div class="m-4 ">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" name="age" id="age">
+        </div>
+        <p>{{ninja.created_at}}</p>
+        
+    <a href="/dojos/{{dojo.id}}" class="m-4 link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Back to Dojo</a> |           
+    <input type="submit" value="Update ninja" class=" m-4 btn btn-outline-primary">
+    </form>
+</div>
+
+
+{%endblock%}

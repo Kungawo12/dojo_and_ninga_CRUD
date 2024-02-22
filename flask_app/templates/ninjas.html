@@ -1,0 +1,26 @@
+{%extends "layout.html"%}
+{%block body%}
+<div class="container">
+    <div class="card col-6 mx-auto bg-black text-light">
+        <div class="card-title p-3 m-4">
+            <h1 class="text-primary text-center mb-5">New Ninjas</h1>
+            <form action="/ninjas/add_ninjas" method="post">
+                <label class=" fs-3" for="dojo">Dojo:</label>
+                <select class=" form-select mb-3" name="dojo_id" id="dojo_id">
+                    {%for dojo in dojos%}
+                    <option value={{dojo.id}}>{{dojo.name}}</option>
+                    {%endfor%}
+                </select>
+                <label class="fs-5" for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" class="form-control mb-3">
+                <label class="fs-5" for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" class="form-control mb-3">
+                <label class="fs-5" for="age">Age:</label>
+                <input type="number" class="form-control" name="age" id="age" min="18" max="55">
+                <button type="submit"class="btn btn-outline-success m-3">Add Ninja</button>
+            </form>
+        </div>
+    </div>
+    <p class=" m-5 fs-4 link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><a href="/">Home</a></p>
+</div>
+{%endblock%}
