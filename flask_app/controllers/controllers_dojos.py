@@ -16,7 +16,7 @@ def add_dojo():
         'name' : request.form['name']
         }
     Dojo.add_dojo(data)
-    return redirect('/')
+    return redirect('/dojos')
 
 @app.route("/dojos/<int:id>")
 def show_dojo(id):

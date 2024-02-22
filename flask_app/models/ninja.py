@@ -31,6 +31,7 @@ class Ninja:
         query= """ UPDATE ninjas
         SET first_name=%(first_name)s,last_name= %(last_name)s, age = %(age)s,
         dojo_id= %(dojo_id)s
+        WHERE id = %(id)s
         """
         results = connectToMySQL('dojo_db').query_db(query,data)
         return results
